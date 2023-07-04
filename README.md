@@ -1,7 +1,7 @@
 # SSBilinear - Solving *S*parse *S*eparable *Bilinear* Programs Using Lifted Bilinear Cover Inequalities
 Computational codes for Gu X, Dey SS, Richard JPP (2023) "Solving sparse separable bilinear programs using lifted bilinear cover inequalities".
 
-## Prerequisites (*Experiment Settings*)
+## Prerequisites (*Settings in Paper*)
 * Python 3 (*Python 3.9.7*)
 * Gurobi (*Gurobi 9.5.0*)
 
