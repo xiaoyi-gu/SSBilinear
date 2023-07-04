@@ -5,7 +5,8 @@ Computational codes for Gu X, Dey SS, Richard JPP (2023) "Solving sparse separab
 * Python 3 (*Python 3.9.7*)
 * Gurobi (*Gurobi 9.5.0*)
 
-## Latest Release and Results [Link](https://github.com/xiaoyi-gu/SSBilinear/releases/latest)
+## Latest Release and Results 
+[Link](https://github.com/xiaoyi-gu/SSBilinear/releases/latest)
 
 ## Installation
 For Local Execution:
