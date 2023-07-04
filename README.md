@@ -1,12 +1,12 @@
 # SSBilinear - Solving *S*parse *S*eparable *Bilinear* Programs Using Lifted Bilinear Cover Inequalities
 Computational codes for Gu X, Dey SS, Richard JPP (2023) "Solving sparse separable bilinear programs using lifted bilinear cover inequalities".
 
+## Latest Release and Results 
+[Link](https://github.com/xiaoyi-gu/SSBilinear/releases/latest)
+
 ## Prerequisites (*Settings in Paper*)
 * Python 3 (*Python 3.9.7*)
 * Gurobi (*Gurobi 9.5.0*)
-
-## Latest Release and Results 
-[Link](https://github.com/xiaoyi-gu/SSBilinear/releases/latest)
 
 ## Installation
 For Local Execution:
