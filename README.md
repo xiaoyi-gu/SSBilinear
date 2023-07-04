@@ -11,7 +11,8 @@ Computational codes for Gu X, Dey SS, Richard JPP (2023) "Solving sparse separab
 ## Installation
 For Local Execution:
 * Download the codes and instances, and extract into a proper folder.
-Warning: local and unparallelized execution will take an extended period of time.
+
+*Warning: local and unparallelized execution will take an extended period of time.*
 
 For HTCondor Execution:
 * Download the codes and instances, and extract into a proper folder.
