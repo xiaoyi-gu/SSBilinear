@@ -28,7 +28,7 @@ def main():
         fname = f'{m}-{n}-{p}-{itr}-{viol}-{ind}-pos-RI.csv'
         for r in range(rerun):
             try:
-                subprocess.run(f'python src/bilinear-test-noBARON-pos-RI.py.py {fname} {m} {n} {p} {itr} {viol} {ind} > {fname}.log 2>&1')
+                subprocess.run(f'python src/bilinear-test-noBARON-pos-RI.py {fname} {m} {n} {p} {itr} {viol} {ind} > {fname}.log 2>&1')
                 break
             except:
                 print(f'error running {fname} - check {fname}.log')
