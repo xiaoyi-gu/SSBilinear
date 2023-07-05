@@ -1,7 +1,9 @@
 import subprocess
 import itertools
 
-def main():
+def main():    
+    if not os.path.exists('./log/'):
+        os.mkdir('./log/')
     pList = [0.01, 0.02, 0.05]
     nList = [100, 250, 500]
     mList = [100, 250, 500]
@@ -18,20 +20,40 @@ def main():
 
     for m, n, p, viol, ind in itertools.product(mList, nList, pList, vList, indList):
         fname = f'{m}-{n}-{p}-{itr}-{viol}-{ind}-neg.csv'
-        for r in range(rerun):
-            try:
-                subprocess.run(f'python src/bilinear-test-noBARON-neg.py {fname} {m} {n} {p} {itr} {viol} {ind} > {fname}.log 2>&1')
-                break
-            except:
-                print(f'error running {fname} - check {fname}.log')
+        if os.path.exists(f'./results/{fname}'):
+            print(f'skip {fname} - already exists')
+        else:
+            flog = open(f'./log/{fname}.log', 'wb+')
+            for r in range(rerun):
+                result = subprocess.run(
+                    f'python src/bilinear-test-noBARON-neg.py {fname} {m} {n} {p} {itr} {viol} {ind}', 
+                    stdout=subprocess.PIPE, stderr=subprocess.PIPE
+                )
+                flog.write(result.stdout)
+                flog.write(result.stderr)
+                if result.stderr:
+                    print(f'loop {r} error running {fname} - check {fname}.log')
+                else:
+                    break
+            flog.close()
             
         fname = f'{m}-{n}-{p}-{itr}-{viol}-{ind}-pos-RI.csv'
-        for r in range(rerun):
-            try:
-                subprocess.run(f'python src/bilinear-test-noBARON-pos-RI.py {fname} {m} {n} {p} {itr} {viol} {ind} > {fname}.log 2>&1')
-                break
-            except:
-                print(f'error running {fname} - check {fname}.log')
+        if os.path.exists(f'./results/{fname}'):
+            print(f'skip {fname} - already exists')
+        else:
+            flog = open(f'./log/{fname}.log', 'wb+')
+            for r in range(rerun): 
+                result = subprocess.run(
+                    f'python src/bilinear-test-noBARON-pos-RI.py {fname} {m} {n} {p} {itr} {viol} {ind}', 
+                    stdout=subprocess.PIPE, stderr=subprocess.PIPE
+                )
+                flog.write(result.stdout)
+                flog.write(result.stderr)
+                if result.stderr:
+                    print(f'loop {r} error running {fname} - check {fname}.log')
+                else:
+                    break
+            flog.close()
 
 
 if __name__ == '__main__':
