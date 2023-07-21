@@ -1,5 +1,6 @@
 import subprocess
 import itertools
+import os
 
 def main():    
     if not os.path.exists('./log/'):
@@ -13,10 +14,6 @@ def main():
     indList = range(10)
 
     rerun = 3
-
-    # with open('qList.txt', 'w+') as f:
-        # for m, n, p, viol, ind in itertools.product(mList, nList, pList, vList, indList):
-            # if 20 >= n * p >= 5: f.write(f'{m},{n},{p},{itr},{viol},{ind}\n')
 
     for m, n, p, viol, ind in itertools.product(mList, nList, pList, vList, indList):
         fname = f'{m}-{n}-{p}-{itr}-{viol}-{ind}-neg.csv'
@@ -54,7 +51,6 @@ def main():
                 else:
                     break
             flog.close()
-
 
 if __name__ == '__main__':
     main()
