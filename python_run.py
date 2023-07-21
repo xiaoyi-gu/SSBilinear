@@ -16,6 +16,8 @@ def main():
     rerun = 3
 
     for m, n, p, viol, ind in itertools.product(mList, nList, pList, vList, indList):
+        if not 20 >= n * p >= 5: continue
+
         fname = f'{m}-{n}-{p}-{itr}-{viol}-{ind}-neg.csv'
         if os.path.exists(f'./results/{fname}'):
             print(f'skip {fname} - already exists')
